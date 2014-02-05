@@ -193,7 +193,7 @@ namespace PrintManager
 
             paramList.Add(new ParamValue(param, controlNumber));
 
-            DataTable queryResult = SqlConnection.Select(_sqlConn, ref sqlException, Query.UserInfo, paramList);
+            DataTable queryResult = _sqlConn.Select(ref sqlException, Query.UserInfo, paramList);
 
             if (queryResult == null)
             {
@@ -279,7 +279,7 @@ namespace PrintManager
             paramList.Add(new ParamValue(lblUser.Tag.ToString(), lblUser.Content.ToString()));
 
             //Actualizamos en la base de datos las hojas que le van a quedar al usuario.
-            if (SqlConnection.UpdateInsert(_sqlConn, ref sqlException, Query.UpdateAvailableSheets, paramList))
+            if (_sqlConn.UpdateInsert(ref sqlException, Query.UpdateAvailableSheets, paramList))
             {
                 //Hacemos la inserción de un registro en la tabla HistorialTrabajos.
                 sqlException = DoInsertQuery();
@@ -324,7 +324,7 @@ namespace PrintManager
             paramList.Add(new ParamValue(lblUser.Tag.ToString(), lblUser.Content.ToString()));  //Param = idUser
 
             //Hacemos la inserción del registro.
-            if (!SqlConnection.UpdateInsert(_sqlConn, ref sqlException, Query.InsertHistorial, paramList))
+            if (!_sqlConn.UpdateInsert(ref sqlException, Query.InsertHistorial, paramList))
             {
                 return sqlException;
             }

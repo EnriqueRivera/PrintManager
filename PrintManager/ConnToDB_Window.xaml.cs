@@ -209,7 +209,7 @@ namespace PrintManager
                                                     txtUsername.Text, pwdBox.Password);
 
                     //Realizamos la conexión de prueba con la base de datos.
-                    if (SqlConnection.IsConnSuccessful(sqlConn, ref sqlException))
+                    if (sqlConn.IsConnSuccessful(ref sqlException))
                     {
                         //Si fue exitosa, mostramos la ventana donde se selecciona la impresora.
                         SelectPrinter_Window selPrintWnd = new SelectPrinter_Window(sqlConn);

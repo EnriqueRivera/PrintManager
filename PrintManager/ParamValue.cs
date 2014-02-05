@@ -18,7 +18,7 @@ using System.Text;
 /// <summary>
 /// Clase que encapsula el parámetro y valor para cada consulta parametrizada.
 /// </summary>
-class ParamValue
+public class ParamValue
 {
     #region Instance variables
 

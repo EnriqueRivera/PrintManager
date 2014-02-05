@@ -111,7 +111,7 @@ namespace PrintManager
             paramList.Add(new ParamValue(param, controlNumber));
 
             //Realizamos la consulta y obtenemos un DataTable
-            DataTable queryResult = SqlConnection.Select(_sqlConn, ref sqlException, Query.AvailableSheets, paramList);
+            DataTable queryResult = _sqlConn.Select(ref sqlException, Query.AvailableSheets, paramList);
 
             if (queryResult == null)
             {
@@ -148,7 +148,7 @@ namespace PrintManager
             paramList.Add(new ParamValue(txtControlNumber.Tag.ToString(), "Administrador"));
             paramList.Add(new ParamValue(pwdBox.Tag.ToString(), pwdBox.Password));
 
-            DataTable queryResult = SqlConnection.Select(_sqlConn, ref sqlException, Query.CheckPassword, paramList);
+            DataTable queryResult = _sqlConn.Select(ref sqlException, Query.CheckPassword, paramList);
 
             if (queryResult == null)
             {
@@ -275,7 +275,7 @@ namespace PrintManager
             paramList.Add(new ParamValue(txtNumSheets.Tag.ToString(), sheets.ToString()));
             paramList.Add(new ParamValue(txtControlNumber.Tag.ToString(), txtControlNumber.Text));
 
-            if (SqlConnection.UpdateInsert(_sqlConn, ref sqlException, Query.UpdateAvailableSheets, paramList))
+            if (_sqlConn.UpdateInsert(ref sqlException, Query.UpdateAvailableSheets, paramList))
             {
                 MessageBox.Show(txtNumSheets.Text + " sheets were " + addRemove + " to user " + txtControlNumber.Text + ".", title, MessageBoxButton.OK, MessageBoxImage.Information);
                 pwdBox.Password = "";

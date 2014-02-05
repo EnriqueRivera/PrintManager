@@ -13,7 +13,7 @@ public class SqlConnection
     #region Reference Variables
 
     //Almacenamos los datos correspondientes para la conexión con la base de datos.
-    private string _serverIP, _port, _schema, _username, _password;
+    private string _serverIP, _port, _schema, _username, _password, _connString;
 
     #endregion
 
@@ -36,6 +36,9 @@ public class SqlConnection
         _schema= schema;
         _username = username;
         _password = password;
+
+        _connString = string.Format("server={0};user={1};database={2};port={3};password={4};",
+                                _serverIP, _username, _schema, _port, _password);
     }
 
     #endregion
@@ -48,45 +51,19 @@ public class SqlConnection
     /// <returns>Cadena de conexión</returns>
     public string GetConnectionString()
     {
-        return string.Format("server={0};user={1};database={2};port={3};password={4};",
-                                _serverIP, _username, _schema, _port, _password);
+        return _connString;
     }
 
     #endregion
 
     #region Database Utilities
-
-    /// <summary>
-    /// Método para realizar una conexión de prueba con la base de datos.
-    /// </summary>
-    /// <param name="sqlConn">Objeto que encapsula los datos de la conexión con la base de datos</param>
-    /// <param name="sqlException">Cadena donde se almacena la excepción producida</param>
-    /// <returns>true si la conexión fue exitosa, false en caso contrario</returns>
-    internal static bool IsConnSuccessful(SqlConnection sqlConn, ref string sqlException)
-    {
-        using (MySqlConnection conn = new MySqlConnection(sqlConn.GetConnectionString()))
-        {
-            try
-            {
-                conn.Open();
-                conn.Close();
-
-                return true;
-            }
-            catch (MySqlException mySqlEx)
-            {
-                sqlException = "Unable to connect to the database server.\n\n" + mySqlEx.Message;
-                return false;
-            }
-        }
-    }
-
+    
     /// <summary>
     /// Método para realizar una conexión de prueba con la base de datos.
     /// </summary>
     /// <param name="sqlException">Cadena donde se almacena la excepción producida</param>
     /// <returns>true si la conexión fue exitosa, false en caso contrario</returns>
-    bool IsConnSuccessful(ref string sqlException)
+    public bool IsConnSuccessful(ref string sqlException)
     {
         using (MySqlConnection conn = new MySqlConnection(GetConnectionString()))
         {
@@ -113,9 +90,9 @@ public class SqlConnection
     /// <param name="query">Consulta SELECT que se desea hacer</param>
     /// <param name="paramList">Lista de parámetros indicados en la consulta parametrizada</param>
     /// <returns>Un objeto de tipo DataTable</returns>
-    internal static DataTable Select(SqlConnection sqlConn, ref string sqlException, string query, List<ParamValue> paramList)
+    public DataTable Select(ref string sqlException, string query, List<ParamValue> paramList)
     {
-        using (MySqlConnection conn = new MySqlConnection(sqlConn.GetConnectionString()))
+        using (MySqlConnection conn = new MySqlConnection(_connString))
         {
             try
             {
@@ -123,9 +100,12 @@ public class SqlConnection
 
                 MySqlCommand command = new MySqlCommand(query, conn);
 
-                foreach (var item in paramList)
+                if (paramList != null)
                 {
-                    command.Parameters.AddWithValue(item.Param, item.Value);
+                    foreach (var item in paramList)
+                    {
+                        command.Parameters.AddWithValue(item.Param, item.Value);
+                    }   
                 }
 
                 MySqlDataReader reader = command.ExecuteReader();
@@ -154,9 +134,9 @@ public class SqlConnection
     /// <param name="query">Consulta SELECT que se desea hacer</param>
     /// <param name="paramList">Lista de parámetros indicados en la consulta parametrizada</param>
     /// <returns>true si la inserción o actialización se realizó correctamente, false en caso contrario</returns>
-    internal static bool UpdateInsert(SqlConnection sqlConn, ref string sqlException, string query, List<ParamValue> paramList)
+    public bool UpdateInsert(ref string sqlException, string query, List<ParamValue> paramList)
     {
-        using (MySqlConnection conn = new MySqlConnection(sqlConn.GetConnectionString()))
+        using (MySqlConnection conn = new MySqlConnection(_connString))
         {
             try
             {
@@ -164,9 +144,12 @@ public class SqlConnection
 
                 MySqlCommand command = new MySqlCommand(query, conn);
 
-                foreach (var item in paramList)
+                if (paramList != null)
                 {
-                    command.Parameters.AddWithValue(item.Param, item.Value);
+                    foreach (var item in paramList)
+                    {
+                        command.Parameters.AddWithValue(item.Param, item.Value);
+                    }
                 }
 
                 command.ExecuteNonQuery();

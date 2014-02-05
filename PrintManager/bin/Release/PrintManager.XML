@@ -9,7 +9,7 @@
             Clase que encapsula las propiedades necesarias para agregar registros al DataGrid.
             </summary>
         </member>
-        <member name="T:PrintManager.ParamValue">
+        <member name="T:ParamValue">
             <summary>
             Clase que encapsula el parámetro y valor para cada consulta parametrizada.
             </summary>
@@ -44,7 +44,7 @@
             Print_Window
             </summary>
         </member>
-        <member name="M:PrintManager.Print_Window.#ctor(PrintManager.PrintJobWrapper,System.Printing.PrintSystemJobInfo,PrintManager.SqlConnection)">
+        <member name="M:PrintManager.Print_Window.#ctor(PrintManager.PrintJobWrapper,System.Printing.PrintSystemJobInfo,SqlConnection)">
             <summary>
             Constructor de la ventna.
             </summary>
@@ -122,7 +122,7 @@
             InitializeComponent
             </summary>
         </member>
-        <member name="T:PrintManager.Query">
+        <member name="T:Query">
             <summary>
             Clase que almacena las querys.
             </summary>
@@ -135,7 +135,7 @@
             SelectPrinter_Window
             </summary>
         </member>
-        <member name="M:PrintManager.SelectPrinter_Window.#ctor(PrintManager.SqlConnection)">
+        <member name="M:PrintManager.SelectPrinter_Window.#ctor(SqlConnection)">
             <summary>
             Constructor de la ventana.
             </summary>
@@ -156,12 +156,12 @@
             InitializeComponent
             </summary>
         </member>
-        <member name="T:PrintManager.SqlConnection">
+        <member name="T:SqlConnection">
             <summary>
             Clase que contiene una serie de métodos y propiedades que son utilies para trabajar con consultas en la base de datos.
             </summary>
         </member>
-        <member name="M:PrintManager.SqlConnection.#ctor(System.String,System.String,System.String,System.String,System.String)">
+        <member name="M:SqlConnection.#ctor(System.String,System.String,System.String,System.String,System.String)">
             <summary>
             Constructor de la clase.
             </summary>
@@ -171,28 +171,20 @@
             <param name="username">Nombre de usuario con el cuál se realizarán las consultas en la base de datos</param>
             <param name="password">Contraseña del usuario</param>
         </member>
-        <member name="M:PrintManager.SqlConnection.GetConnectionString">
+        <member name="M:SqlConnection.GetConnectionString">
             <summary>
             Método para obterner la cadena de conexión para la base de datos.
             </summary>
             <returns>Cadena de conexión</returns>
         </member>
-        <member name="M:PrintManager.SqlConnection.IsConnSuccessful(PrintManager.SqlConnection,System.String@)">
-            <summary>
-            Método para realizar una conexión de prueba con la base de datos.
-            </summary>
-            <param name="sqlConn">Objeto que encapsula los datos de la conexión con la base de datos</param>
-            <param name="sqlException">Cadena donde se almacena la excepción producida</param>
-            <returns>true si la conexión fue exitosa, false en caso contrario</returns>
-        </member>
-        <member name="M:PrintManager.SqlConnection.IsConnSuccessful(System.String@)">
+        <member name="M:SqlConnection.IsConnSuccessful(System.String@)">
             <summary>
             Método para realizar una conexión de prueba con la base de datos.
             </summary>
             <param name="sqlException">Cadena donde se almacena la excepción producida</param>
             <returns>true si la conexión fue exitosa, false en caso contrario</returns>
         </member>
-        <member name="M:PrintManager.SqlConnection.Select(PrintManager.SqlConnection,System.String@,System.String,System.Collections.Generic.List{PrintManager.ParamValue})">
+        <member name="M:SqlConnection.Select(System.String@,System.String,System.Collections.Generic.List{ParamValue})">
             <summary>
             Método que realiza la consulta SELECT en la base de datos
             </summary>
@@ -202,7 +194,7 @@
             <param name="paramList">Lista de parámetros indicados en la consulta parametrizada</param>
             <returns>Un objeto de tipo DataTable</returns>
         </member>
-        <member name="M:PrintManager.SqlConnection.UpdateInsert(PrintManager.SqlConnection,System.String@,System.String,System.Collections.Generic.List{PrintManager.ParamValue})">
+        <member name="M:SqlConnection.UpdateInsert(System.String@,System.String,System.Collections.Generic.List{ParamValue})">
             <summary>
             Método que puede realizar una actualización o una inserción de un registro en la base de datos.
             </summary>
@@ -225,7 +217,7 @@
             Almacena los datos de la conexión que se realizó en la primer ventana.
             </summary>
         </member>
-        <member name="M:PrintManager.ManageSheets_Window.#ctor(PrintManager.SqlConnection)">
+        <member name="M:PrintManager.ManageSheets_Window.#ctor(SqlConnection)">
             <summary>
             Constructor de la ventana para administrar hojas.
             </summary>
@@ -394,7 +386,7 @@
             MainWindow
             </summary>
         </member>
-        <member name="M:PrintManager.MainWindow.#ctor(System.Printing.LocalPrintServer,System.String,PrintManager.SqlConnection)">
+        <member name="M:PrintManager.MainWindow.#ctor(System.Printing.LocalPrintServer,System.String,SqlConnection)">
             <summary>
             Constructor de la ventana principal.
             </summary>
