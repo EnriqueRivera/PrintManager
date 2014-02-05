@@ -1,0 +1,24 @@
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\bin\Release\PrintManager.exe
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\bin\Release\PrintManager.pdb
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Release\ConnToDB_Window.baml
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Release\MainWindow.baml
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Release\ConnToDB_Window.g.cs
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Release\MainWindow.g.cs
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Release\App.g.cs
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Release\PrintManager_MarkupCompile.cache
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Release\PrintManager.g.resources
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Release\PrintManager.Properties.Resources.resources
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Release\PrintManager.csproj.GenerateResource.Cache
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Release\PrintManager.exe
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Release\PrintManager.pdb
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Release\Simple Styles.baml
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Release\App.baml
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Release\SelectPrinter_Window.baml
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Release\SelectPrinter_Window.g.cs
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\bin\Release\System.Windows.Controls.DataVisualization.Toolkit.pdb
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Release\Print_Window.baml
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Release\ManageSheets_Window.baml
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Release\Print_Window.g.cs
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Release\ManageSheets_Window.g.cs
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\bin\Release\PrintManager.XML
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Release\PrintManager.csprojResolveAssemblyReference.cache

@@ -1,0 +1,25 @@
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\bin\Debug\PrintManager.exe
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\bin\Debug\PrintManager.pdb
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Debug\MainWindow.baml
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Debug\MainWindow.g.cs
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Debug\App.g.cs
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Debug\PrintManager_MarkupCompile.cache
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Debug\PrintManager.g.resources
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Debug\PrintManager.Properties.Resources.resources
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Debug\PrintManager.csproj.GenerateResource.Cache
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Debug\PrintManager.exe
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Debug\PrintManager.pdb
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Debug\ConnToDB_Window.baml
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Debug\ConnToDB_Window.g.cs
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\bin\Debug\WPFToolkit.dll
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Debug\SelectPrinter_Window.baml
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Debug\Simple Styles.baml
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Debug\App.baml
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Debug\SelectPrinter_Window.g.cs
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Debug\ManageSheets_Window.baml
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Debug\ManageSheets_Window.g.cs
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Debug\Print_Window.baml
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\obj\Debug\Print_Window.g.cs
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.pdb
+C:\Users\EnriqueAlonso\Documents\Visual Studio 2012\Projects\PrintManager\PrintManager\bin\Debug\WPFToolkit.pdb

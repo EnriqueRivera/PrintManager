@@ -1,0 +1,546 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PrintManager</name>
+    </assembly>
+    <members>
+        <member name="T:PrintManager.Job">
+            <summary>
+            Clase que encapsula las propiedades necesarias para agregar registros al DataGrid.
+            </summary>
+        </member>
+        <member name="T:PrintManager.ParamValue">
+            <summary>
+            Clase que encapsula el parámetro y valor para cada consulta parametrizada.
+            </summary>
+        </member>
+        <member name="T:PrintManager.PrintJobWrapper">
+            <summary>
+            Clase que envuelve las variables necesarias para imprimir un trabajo.
+            </summary>
+        </member>
+        <member name="M:PrintManager.PrintJobWrapper.#ctor(System.Boolean,System.Printing.PrintSystemJobInfo)">
+            <summary>
+            Constructor de la clase.
+            </summary>
+            <param name="printJob">Variable que indica que se desea imprimir un trabajo</param>
+            <param name="currentPrintJob">Trabajo que se está imprimiendo actualmente</param>
+        </member>
+        <member name="P:PrintManager.PrintJobWrapper.PrintJob">
+            <summary>
+            Variable que indica que se desea imprimir un trabajo
+            </summary>
+        </member>
+        <member name="P:PrintManager.PrintJobWrapper.CurrentPrintingJob">
+            <summary>
+            Trabajo que se está imprimiendo actualmente
+            </summary>
+        </member>
+        <member name="T:PrintManager.Print_Window">
+            <summary>
+            Ventana que administra el trabajo que se desea imprimir.
+            </summary>
+            <summary>
+            Print_Window
+            </summary>
+        </member>
+        <member name="M:PrintManager.Print_Window.#ctor(PrintManager.PrintJobWrapper,System.Printing.PrintSystemJobInfo,PrintManager.SqlConnection)">
+            <summary>
+            Constructor de la ventna.
+            </summary>
+            <param name="printWrapper">Encapsula si se imprime o no el trabajo</param>
+            <param name="jobToPrint">Trabajo que se desea imprimir</param>
+            <param name="sqlConn">Datos de la conexión a la base de datos</param>
+        </member>
+        <member name="M:PrintManager.Print_Window.SetContentAndTooltip(System.Windows.Controls.Label,System.String)">
+            <summary>
+            Método que coloca la cadena dada en la propiedad Content y Tooltip del label indicado.
+            </summary>
+            <param name="lbl">Label al que se le aplicará el cambio en sus propiedades</param>
+            <param name="s">Cadena a aplicar en las propiedades del Label</param>
+        </member>
+        <member name="M:PrintManager.Print_Window.FillJobInfoFields">
+            <summary>
+            Método para llenar los campos de la información del trabajo que se desea imprimir.
+            </summary>
+        </member>
+        <member name="M:PrintManager.Print_Window.FillUserInfoFields">
+            <summary>
+            Método para llenar los campos de la información del usuario.
+            </summary>
+        </member>
+        <member name="M:PrintManager.Print_Window.HasEnoughSheets(System.Int32,System.Int32)">
+            <summary>
+            Método que nos indica si el usuario posee suficientes hojas.
+            </summary>
+            <param name="availableSheets">Hojas que tiene disponibles</param>
+            <param name="pagesToRemove">Hojas que hay que removerle</param>
+            <returns>true si el usuario cuenta con hojas suficientes, false en caso contrario</returns>
+        </member>
+        <member name="M:PrintManager.Print_Window.UserDontExist">
+            <summary>
+            Método que realiza acciones en la ventana, cuando el usuario no está en la base de datos.
+            </summary>
+        </member>
+        <member name="M:PrintManager.Print_Window.GetUserInfo(System.String,System.String,System.String)">
+            <summary>
+            Método que nos proporciona la información del usuario (Nombre completo, carrera y hojas disponibles).
+            </summary>
+            <param name="param">Parámetro indicado en la consulta parametrizada</param>
+            <param name="controlNumber">Número de control que se usa para encontrar al usuario</param>
+            <param name="errorTitle">Título que llevarán las ventanas de error</param>
+            <returns>
+            Una cadena con el siguiente formato:
+            Nombre_completo,Carrera,HojasDisponibles
+            </returns>
+        </member>
+        <member name="M:PrintManager.Print_Window.KeyCombinations(System.Windows.Input.KeyEventArgs)">
+            <summary>
+            Método para saber si se presionó una combinación correcta de teclas.
+            </summary>
+            <param name="e">Encapsula propiedades de la tecla presionada</param>
+        </member>
+        <member name="M:PrintManager.Print_Window.PrintJob">
+            <summary>
+            Método que pregunta sobre el número de copias enviadas.
+            </summary>
+        </member>
+        <member name="M:PrintManager.Print_Window.DoUpdateQuery(System.String)">
+            <summary>
+            Método que realiza la actualizacion e inserción de un registro en la base de datos.
+            </summary>
+            <param name="sheetsToRemove">Hojas totales que se van a remover</param>
+        </member>
+        <member name="M:PrintManager.Print_Window.DoInsertQuery">
+            <summary>
+            Método para insertar un registro en la tabla HistorialTrabajos.
+            </summary>
+            <returns>Una cadena con la excepción que resulto</returns>
+        </member>
+        <member name="M:PrintManager.Print_Window.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:PrintManager.Query">
+            <summary>
+            Clase que almacena las querys.
+            </summary>
+        </member>
+        <member name="T:PrintManager.SelectPrinter_Window">
+            <summary>
+            Window for selecting a printer
+            </summary>
+            <summary>
+            SelectPrinter_Window
+            </summary>
+        </member>
+        <member name="M:PrintManager.SelectPrinter_Window.#ctor(PrintManager.SqlConnection)">
+            <summary>
+            Constructor de la ventana.
+            </summary>
+            <param name="sqlConn">Datos de la conexión a la base de datos</param>
+        </member>
+        <member name="M:PrintManager.SelectPrinter_Window.FillWithPrinters">
+            <summary>
+            Método para llenar el ComboBox con las impresoras.
+            </summary>
+        </member>
+        <member name="M:PrintManager.SelectPrinter_Window.SelectPrinter">
+            <summary>
+            Método que se utiliza para cuando se selecciona una impresora.
+            </summary>
+        </member>
+        <member name="M:PrintManager.SelectPrinter_Window.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:PrintManager.SqlConnection">
+            <summary>
+            Clase que contiene una serie de métodos y propiedades que son utilies para trabajar con consultas en la base de datos.
+            </summary>
+        </member>
+        <member name="M:PrintManager.SqlConnection.#ctor(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Constructor de la clase.
+            </summary>
+            <param name="serverIP">Host name o IP del servidor de la base de datos</param>
+            <param name="port">Puerto por el cuál se harán las peticiones al servidor de base de datos</param>
+            <param name="schema">Base de datos seleccionada</param>
+            <param name="username">Nombre de usuario con el cuál se realizarán las consultas en la base de datos</param>
+            <param name="password">Contraseña del usuario</param>
+        </member>
+        <member name="M:PrintManager.SqlConnection.GetConnectionString">
+            <summary>
+            Método para obterner la cadena de conexión para la base de datos.
+            </summary>
+            <returns>Cadena de conexión</returns>
+        </member>
+        <member name="M:PrintManager.SqlConnection.IsConnSuccessful(PrintManager.SqlConnection,System.String@)">
+            <summary>
+            Método para realizar una conexión de prueba con la base de datos.
+            </summary>
+            <param name="sqlConn">Objeto que encapsula los datos de la conexión con la base de datos</param>
+            <param name="sqlException">Cadena donde se almacena la excepción producida</param>
+            <returns>true si la conexión fue exitosa, false en caso contrario</returns>
+        </member>
+        <member name="M:PrintManager.SqlConnection.IsConnSuccessful(System.String@)">
+            <summary>
+            Método para realizar una conexión de prueba con la base de datos.
+            </summary>
+            <param name="sqlException">Cadena donde se almacena la excepción producida</param>
+            <returns>true si la conexión fue exitosa, false en caso contrario</returns>
+        </member>
+        <member name="M:PrintManager.SqlConnection.Select(PrintManager.SqlConnection,System.String@,System.String,System.Collections.Generic.List{PrintManager.ParamValue})">
+            <summary>
+            Método que realiza la consulta SELECT en la base de datos
+            </summary>
+            <param name="sqlConn">Objeto que encapsula los datos de la conexión con la base de datos</param>
+            <param name="sqlException">Cadena donde se almacena la excepción producida</param>
+            <param name="query">Consulta SELECT que se desea hacer</param>
+            <param name="paramList">Lista de parámetros indicados en la consulta parametrizada</param>
+            <returns>Un objeto de tipo DataTable</returns>
+        </member>
+        <member name="M:PrintManager.SqlConnection.UpdateInsert(PrintManager.SqlConnection,System.String@,System.String,System.Collections.Generic.List{PrintManager.ParamValue})">
+            <summary>
+            Método que puede realizar una actualización o una inserción de un registro en la base de datos.
+            </summary>
+            <param name="sqlConn">Objeto que encapsula los datos de la conexión con la base de datos</param>
+            <param name="sqlException">Cadena donde se almacena la excepción producida</param>
+            <param name="query">Consulta SELECT que se desea hacer</param>
+            <param name="paramList">Lista de parámetros indicados en la consulta parametrizada</param>
+            <returns>true si la inserción o actialización se realizó correctamente, false en caso contrario</returns>
+        </member>
+        <member name="T:PrintManager.ManageSheets_Window">
+            <summary>
+            Ventana para la administración de hojas.
+            </summary>
+            <summary>
+            ManageSheets_Window
+            </summary>
+        </member>
+        <member name="F:PrintManager.ManageSheets_Window._sqlConn">
+            <summary>
+            Almacena los datos de la conexión que se realizó en la primer ventana.
+            </summary>
+        </member>
+        <member name="M:PrintManager.ManageSheets_Window.#ctor(PrintManager.SqlConnection)">
+            <summary>
+            Constructor de la ventana para administrar hojas.
+            </summary>
+            <param name="sqlConn">Datos de la conexión a la base de datos</param>
+        </member>
+        <member name="M:PrintManager.ManageSheets_Window.SearchUser">
+            <summary>
+            Método que checa las hojas disponibles de determinado usuario.
+            </summary>
+        </member>
+        <member name="M:PrintManager.ManageSheets_Window.GetAvailableSheets(System.String,System.String,System.String)">
+            <summary>
+            Método para obtener el número de hojas disponibles del usuario.
+            </summary>
+            <param name="param">Nombre del parametro que será usado en la consulta parametrizada</param>
+            <param name="controlNumber">Id del usuario</param>
+            <param name="errorTitle">Titulo que llevará la ventana si llegase a surgir un error</param>
+            <returns>Npumero de hojas disponibles</returns>
+        </member>
+        <member name="M:PrintManager.ManageSheets_Window.IsCorrectPassword">
+            <summary>
+            Método que realiza una consulta para checar la contraseña del Administrador.
+            </summary>
+            <returns>true si la contraseña es correcta, false en caso contrario</returns>
+        </member>
+        <member name="M:PrintManager.ManageSheets_Window.AddSheets">
+            <summary>
+            Método utilizado para agregar hojas a algún usuario.
+            </summary>
+        </member>
+        <member name="M:PrintManager.ManageSheets_Window.RemoveSheets">
+            <summary>
+            Método utilizado para remover hojas a algún usuario.
+            </summary>
+        </member>
+        <member name="M:PrintManager.ManageSheets_Window.DoQueryAdd">
+            <summary>
+            Método que calcula las hojas que son requeridas para hacer el update en la base de datos.
+            </summary>
+        </member>
+        <member name="M:PrintManager.ManageSheets_Window.DoQueryRemove">
+            <summary>
+            Método que calcula las hojas que son requeridas para hacer el update en la base de datos.
+            </summary>
+        </member>
+        <member name="M:PrintManager.ManageSheets_Window.DoUpdateQuery(System.Int32,System.String,System.String)">
+            <summary>
+            Método que realiza el update de las hojas.
+            </summary>
+            <param name="sheets">Valor en el que quedará el registro HojasDisponibles</param>
+            <param name="addRemove">Indicamos si la consulta es para agregar o remover</param>
+            <param name="title">Título de las ventanas emergentes</param>
+        </member>
+        <member name="M:PrintManager.ManageSheets_Window.IsAFieldEmpty(System.Text.StringBuilder)">
+            <summary>
+            Método que checa si hay algún campo vacío en la ventana.
+            </summary>
+            <param name="errorMessage">Variable que almacenará el nombre de los campos que están vacíos</param>
+            <returns>true si un campo es vacío, false en caso contrario</returns>
+        </member>
+        <member name="M:PrintManager.ManageSheets_Window.KeyCombinations(System.Windows.Input.KeyEventArgs)">
+            <summary>
+            Método para saber si se presionó una combinación correcta de teclas.
+            </summary>
+            <param name="e">Encapsula propiedades de la tecla presionada</param>
+        </member>
+        <member name="M:PrintManager.ManageSheets_Window.IsValidNumber(System.String)">
+            <summary>
+            Método que checa si una cadena es un número válido (si es menor a 1 se considera inválido).
+            </summary>
+            <param name="num">Número a evaluar</param>
+            <returns>true si es válido, false en caso contrario</returns>
+        </member>
+        <member name="M:PrintManager.ManageSheets_Window.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:PrintManager.WindowFormat">
+            <summary>
+            Clase para aplicar formato a ventanas.
+            </summary>
+        </member>
+        <member name="M:PrintManager.WindowFormat.CenterWindowOnScreen(System.Windows.Window)">
+            <summary>
+            Método que coloca la ventana en el centro.
+            </summary>
+            <param name="window">Ventana que será centrada</param>
+        </member>
+        <member name="T:PrintManager.App">
+            <summary>
+            Lógica de interacción para App.xaml
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:PrintManager.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:PrintManager.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:PrintManager.ConnToDB_Window">
+            <summary>
+            Ventana inicial, para checar si se puede establecer una conexión con el servidor de base de datos.
+            </summary>
+            <summary>
+            ConnToDB_Window
+            </summary>
+        </member>
+        <member name="M:PrintManager.ConnToDB_Window.#ctor">
+            <summary>
+            Constructor de la ventana.
+            </summary>
+        </member>
+        <member name="M:PrintManager.ConnToDB_Window.IsAFieldEmpty(System.Windows.Controls.Grid,System.Text.StringBuilder)">
+            <summary>
+            Valida si un elemento de un Grid es nulo o vacío.
+            </summary>
+            <param name="gridTextBox">Contiene el TextBox o PasswordBox a validar</param>
+            <param name="errorMessage">Se le concatena el tag de cada control vacío</param>
+            <returns>true si al menos un elemento en el Grid está vacío</returns>
+        </member>
+        <member name="M:PrintManager.ConnToDB_Window.IsCurrentUserAnAdministrator">
+            <summary>
+            Valida si el usuario actual tiene privilegios de administrador.
+            </summary>
+            <returns>true si el usuario es administrador, falso si no es así</returns>
+        </member>
+        <member name="M:PrintManager.ConnToDB_Window.AppendDllsToExe">
+            <summary>
+            Método que ayuda a poner los dlls dentro del exe.
+            </summary>
+        </member>
+        <member name="M:PrintManager.ConnToDB_Window.KeyCombinations(System.Windows.Input.KeyEventArgs)">
+            <summary>
+            Método para saber si se presionó una combinación correcta de teclas.
+            </summary>
+            <param name="e">Encapsula propiedades de la tecla presionada</param>
+        </member>
+        <member name="M:PrintManager.ConnToDB_Window.DoConnection">
+            <summary>
+            Realizamos una conexión de prueba a la base de datos.
+            </summary>
+        </member>
+        <member name="M:PrintManager.ConnToDB_Window.DoPing">
+            <summary>
+            Realizamos un ping con el host indicado.
+            </summary>
+        </member>
+        <member name="M:PrintManager.ConnToDB_Window.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:PrintManager.MainWindow">
+            <summary>
+            Ventana donde se administra la cola de impresión.
+            </summary>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="M:PrintManager.MainWindow.#ctor(System.Printing.LocalPrintServer,System.String,PrintManager.SqlConnection)">
+            <summary>
+            Constructor de la ventana principal.
+            </summary>
+            <param name="printServer">Servidor acutal de impresión</param>
+            <param name="printQueueSelected">Impresora seleccionada</param>
+            <param name="sqlConn">Datos de la conexión a la base de datos</param>
+        </member>
+        <member name="M:PrintManager.MainWindow.SecondaryThread">
+            <summary>
+            Hilo que controla los trabajos de impresión.
+            </summary>
+        </member>
+        <member name="M:PrintManager.MainWindow.RefreshPrintQueue">
+            <summary>
+            Actualizamos la cola de impresión.
+            </summary>
+        </member>
+        <member name="M:PrintManager.MainWindow.ChangePrinter">
+            <summary>
+            Método para cambiar impresora.
+            </summary>
+        </member>
+        <member name="M:PrintManager.MainWindow.UpdateGrid">
+            <summary>
+            Método para acutalizar el DataGrid
+            </summary>
+        </member>
+        <member name="M:PrintManager.MainWindow.UpdateNewJobDetected">
+            <summary>
+            Método que actualiza el DataGrid si se detectó que cambió el número de trabajos existentes.
+            </summary>
+        </member>
+        <member name="M:PrintManager.MainWindow.PauseAllJobs">
+            <summary>
+            Ponemos en pausa todos los trabajos que no estén pausados, excepto el que se está imprmiendo.
+            </summary>
+        </member>
+        <member name="M:PrintManager.MainWindow.ShowPrintingStatus">
+            <summary>
+            Método que cambia la barra de estado de color, cuando es necesario.
+            </summary>
+        </member>
+        <member name="M:PrintManager.MainWindow.PausePrintQueue">
+            <summary>
+            Pausamos siempre la impresora acutal.
+            </summary>
+        </member>
+        <member name="M:PrintManager.MainWindow.UpdateJobSpooling">
+            <summary>
+            Actualizamos el DataGrid si ya no hay trabajos cargandose.
+            </summary>
+        </member>
+        <member name="M:PrintManager.MainWindow.IsZeroSpoolingCount">
+            <summary>
+            Método que checa si ya no hay trabajos cargandose.
+            </summary>
+            <returns>true si no hay trabajos cargandose, false en caso contrario</returns>
+        </member>
+        <member name="M:PrintManager.MainWindow.PrintJob">
+            <summary>
+            Método que checa si se puede proceder a abrir la ventana donde se imprime el trabajo.
+            </summary>
+        </member>
+        <member name="M:PrintManager.MainWindow.IsJobSpooling(System.Printing.PrintSystemJobInfo)">
+            <summary>
+            Método que checa si se está cargando o no el trabajo.
+            </summary>
+            <param name="job">Trabajo que checaremos, para comprobar que se está cargando</param>
+            <returns>true si se está cargando aún el archivo, false en caso contrario</returns>
+        </member>
+        <member name="M:PrintManager.MainWindow.IsPrintingAJob">
+            <summary>
+            Métotodo que checa si se está imprimiendo un trabajo.
+            </summary>
+            <returns>true si se está imprimiendo actualmente un trabajo, false en caso contrario</returns>
+        </member>
+        <member name="M:PrintManager.MainWindow.DeleteJob">
+            <summary>
+            Método para eliminar un trabajo de la cola de impresión.
+            </summary>
+        </member>
+        <member name="M:PrintManager.MainWindow.ManageSheets">
+            <summary>
+            Método que abre la ventana para administrar hojas.
+            </summary>
+        </member>
+        <member name="M:PrintManager.MainWindow.KeyCombinations(System.Windows.Input.KeyEventArgs)">
+            <summary>
+            Método para saber si se presionó una combinación correcta de teclas.
+            </summary>
+            <param name="e">Encapsula propiedades de la tecla presionada</param>
+        </member>
+        <member name="M:PrintManager.MainWindow.PrintJobFinished">
+            <summary>
+            Método que checa si el trabajo que se estaba imprimiendo ha terminado.
+            </summary>
+        </member>
+        <member name="M:PrintManager.MainWindow.IsJobFinished">
+            <summary>
+            Método que busca el trabajo que se está imprimiendo en la cola de impresión.
+            </summary>
+            <returns>true si el trabajo no se encuentra, false en caso contrario</returns>
+        </member>
+        <member name="M:PrintManager.MainWindow.ResumePrinterAndPrintJob">
+            <summary>
+            Método que quita la pausa a la impresora y al trabajo que se desea imprimir.
+            </summary>
+        </member>
+        <member name="M:PrintManager.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:PrintManager.MainWindow.PrintJobFinishedCallback">
+            <summary>
+            Delegados usuados para llamar a métodos que ejecutarán
+            cambios en variables y componentes del hilo principal.
+            Ya que a través de un hilo secundario no puedes modificar
+            elementos del hilo principal.
+            </summary>
+        </member>
+        <member name="T:PrintManager.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:PrintManager.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:PrintManager.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:PrintManager.Properties.Resources.MySql_Data">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="P:PrintManager.Properties.Resources.WPFToolkit">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+    </members>
+</doc>
