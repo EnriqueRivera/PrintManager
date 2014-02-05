@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 /// <summary>
-/// Clase que almacena las querys...
+/// Clase que almacena las querys.
 /// </summary>
 public class Query
 {
